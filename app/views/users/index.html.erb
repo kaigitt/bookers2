@@ -1,1 +1,17 @@
 users#index
+
+<div class="users_index">
+  <table class="index-table">
+  <thead>
+    <th>image</th>
+    <th>name</th>
+    <th></th>
+  </thead>
+  <% @users.each do |user| %>
+  <tbody>
+    <td>image</td>
+    <td><%= user.name %></td>
+  </tbody>
+  <% end %>
+</table>
+</div>

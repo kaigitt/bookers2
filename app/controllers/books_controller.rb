@@ -3,7 +3,7 @@ class BooksController < ApplicationController
   end
 
   def index
-    @books = Book.all
+    @books = Book.all.order(id: "ASC")
     @book = Book.new
   end
 
@@ -30,6 +30,13 @@ class BooksController < ApplicationController
      redirect_to books_path
     else
      render ("edit")
+    end
+  end
+
+  def destroy
+    book = Book.find(params[:id])
+    if book.destroy
+    redirect_to books_path
     end
   end
 
