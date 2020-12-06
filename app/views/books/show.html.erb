@@ -1,1 +1,16 @@
 books#show
+
+Book detail
+
+<table>
+    <thead>
+      <th>title</th>
+      <th>body</th>
+    </thead>
+    <tbody>
+      <td><%= @book.title %></td>
+      <td><%= @book.body %></td>
+      <td><%= link_to "Edit", "/books/#{@book.id}/edit" %></td>
+      <td><%= link_to "Destroy", "/books/#{@book.id}", method: :delete%></td>
+    </tbody>
+</table>
